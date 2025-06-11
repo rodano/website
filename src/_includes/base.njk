@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="EDC platform for all types of clinical trials"/>
+		<link rel="icon" href="images/favicon.ico"/>
+		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+		<link href="css/global.css" rel="stylesheet" type="text/css" title="default" />
+		<script type="module" src="js/global.js"></script>
+		<script type="module" src="js/carousel.js"></script>
+		<title>{{ rodano }} - EDC Platform</title>
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/">{{ rodano }}</a>
+			</h1>
+			<nav>
+				<ol>
+					<!-- do no use a loop here to have full control over the order -->
+					<li>
+						<a{% if page.url == "/features.html" %} aria-current="page"{% endif %} href="/features.html">Features</a>
+					</li>
+					<li>
+						<a{% if page.url == "/plugins.html" %} aria-current="page"{% endif %} href="/plugins.html">Plugins</a>
+					</li>
+					<li>
+						<a href="https://www.github.com/rodano/rodano-docs">Documentation</a>
+					</li>
+					<li>
+						<a href="https://www.github.com/rodano/rodano">Source code</a>
+					</li>
+				</ol>
+			</nav>
+		</header>
+		<main>
+			{{ content | safe }}
+		</main>
+		<footer>
+			Last updated: {{ page.date | isoDate }}. <a href="privacy_policy.html">Privacy Policy</a>
+		</footer>
+	</body>
+</html>

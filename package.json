@@ -1,0 +1,18 @@
+{
+	"type": "module",
+	"scripts": {
+		"lint": "eslint src",
+		"build": "eleventy",
+		"watch": "eleventy --watch",
+		"start": "eleventy --serve"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.1",
+		"@eslint/js": "^9.28.0",
+		"@html-eslint/eslint-plugin": "^0.41.0",
+		"@html-eslint/parser": "^0.41.0",
+		"@stylistic/eslint-plugin": "^4.4.1",
+		"eslint": "^9.28.0",
+		"globals": "^16.2.0"
+	}
+}

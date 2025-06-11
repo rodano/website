@@ -1,0 +1,6 @@
+{
+	"title": "Error",
+	"layout": "base",
+	"permalink": "error.html",
+	"eleventyExcludeFromCollections": true
+}

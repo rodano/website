@@ -1,0 +1,299 @@
+/* montserrat-200 - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 200;
+	src: url('../fonts/montserrat-v26-latin-200.woff2') format('woff2');
+}
+
+/* montserrat-300 - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/montserrat-v26-latin-300.woff2') format('woff2');
+}
+
+/* montserrat-regular - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/montserrat-v26-latin-regular.woff2') format('woff2');
+}
+
+:root {
+	--font-family: 'Montserrat', sans-serif;
+
+	--text-color: #535353;
+	--highlight-color: #0dc0c0;
+
+	--secondary-background-color: #21252b;
+	--secondary-text-color: #dbe0e2;
+
+}
+html {
+	scroll-padding-top: 5rem; /* height of the header */
+}
+body {
+	font-family: var(--font-family);
+	font-size: large;
+	font-weight: 300;
+	color: var(--text-color);
+	margin: 0;
+}
+::selection {
+	color: white;
+	background: var(--highlight-color);
+}
+section {
+	max-width: 75rem;
+	margin: 2rem auto;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 5px 8px -8px #aaa;
+	padding: 0 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	height: 5rem; /* height of the header must be fixed to be able to set scroll padding top in the html element */
+
+	& a {
+		color: var(--highlight-color);
+	}
+
+	& img {
+		height: 4rem;
+	}
+
+	& nav > ol {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
+
+		& > li {
+			padding: 0;
+
+			&::marker {
+				content: none;
+			}
+
+			& > a {
+				display: inline-block;
+				line-height: 5rem; /* same height as the header */
+				color: var(--text-color);
+				border-bottom: 2px solid transparent;
+
+				&:hover, &[aria-current] {
+					color: var(--highlight-color);
+					border-color: var(--highlight-color);
+				}
+
+				&[aria-current] {
+					pointer-events: none;
+					cursor: default;
+				}
+			}
+		}
+
+	}
+}
+
+footer {
+	background-color: var(--secondary-background-color);
+	text-align: center;
+	color: var(--secondary-text-color);
+	font-size: 0.9rem;
+	margin-top: 5rem;
+	padding: 2rem;
+
+	& a {
+		color: var(--highlight-color);
+	}
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+}
+h2 {
+	position: relative;
+	font-size: 3rem;
+	text-align: center;
+}
+h3 {
+	font-size: 1.5rem;
+	overflow: hidden;
+}
+h4 {
+	font-size: 1.1rem;
+	overflow: hidden;
+}
+a {
+	text-decoration: none;
+}
+ol {
+	list-style-position: outside;
+	list-style-type: disc;
+}
+li {
+	padding: 0.2rem 0;
+	&::marker {
+		content: '✔ ';
+		color: var(--highlight-color);
+	}
+}
+p:first-child {
+	margin-top: 0;
+}
+app-carousel {
+	--button-color: var(--text-color);
+	--highlighted-button-background-color: var(--highlight-color);
+	--highlighted-button-color: white;
+}
+
+.intro {
+	font-size: 1.7rem;
+}
+.cta {
+	font-size: 1.2rem;
+	color: white;
+	border-radius: 2rem;
+	padding: 1rem;
+	background-color: var(--highlight-color);
+}
+
+.columns {
+	display: flex;
+	justify-content: space-between;
+	column-gap: 4rem;
+
+	&.center {
+		align-items: center;
+	}
+
+	& > * {
+		width: 50%;
+	}
+}
+.grid {
+	display: grid;
+	grid-template-columns: auto auto;
+	column-gap: 4rem;
+}
+
+#hero {
+	& app-carousel {
+		display: block;
+		width: 50rem;
+		margin: 2rem auto;
+	}
+}
+
+#why {
+	background-color: var(--secondary-background-color);
+	color: var(--secondary-text-color);
+	text-align: center;
+	margin: 4rem 0;
+	padding: 2rem 4rem;
+}
+
+#start {
+	text-align: center;
+	margin-top: 4rem;
+}
+
+#sponsors {
+	& p {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	& div {
+		display: flex;
+		justify-content: center;
+		gap: 5rem;
+
+		& img {
+			height: 2rem;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	html {
+		scroll-padding-top: 3rem; /* height of the header */
+	}
+	header {
+		padding: 0 1rem;
+		height: 3rem; /* height of the header is linked to the scroll padding of the HTML element */
+		background-image: url(../images/menu.png);
+		background-size: 2rem 2rem;
+		background-repeat: no-repeat;
+		background-position: calc(100% - 0.5rem);
+	}
+
+	/* transform horizontal menu in vertical menu */
+	nav {
+		position: fixed;
+		flex-direction: column;
+		background-color: var(--accent-text-color);
+		width: 100%;
+		top: -100rem;
+		left: 0;
+		margin: 0;
+
+		&.open {
+			top: 3rem;
+		}
+
+		& > ol {
+			display: block;
+
+			& > li {
+				display: block;
+			}
+
+			& > li > :is(a,a:visited) {
+				display: inline-block;
+				width: 100%;
+				text-align: center;
+				color: white;
+				border: 0;
+				border-bottom: 2px solid white;
+				border-radius: 0;
+				padding: 0.5rem;
+				line-height: 2rem;
+				margin: 0;
+			}
+		}
+	}
+
+	section {
+		padding: 1rem;
+	}
+
+	.columns {
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		& > * {
+			width: 100%;
+		}
+	}
+	.grid {
+		grid-template-columns: auto;
+	}
+}

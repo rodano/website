@@ -1,0 +1,10 @@
+{
+	"files.exclude": {
+		"node_modules": true,
+		"package-lock.json": true,
+		"_site": true,
+	},
+	"yaml.schemas": {
+		"https://json.schemastore.org/github-workflow.json": ".github/workflows/deploy.yml"
+	}
+}
