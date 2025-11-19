@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="description" content="EDC platform for all types of clinical trials"/>
 		<link rel="icon" href="images/favicon.ico"/>
 		<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-		<link href="css/global.css" rel="stylesheet" type="text/css" title="default" />
+		<link href="css/global.css" rel="stylesheet" type="text/css" title="default"/>
 		<script type="module" src="js/global.js"></script>
 		<script type="module" src="js/carousel.js"></script>
 		<title>{{ rodano }} - EDC Platform</title>
@@ -20,10 +20,10 @@
 				<ol>
 					<!-- do no use a loop here to have full control over the order -->
 					<li>
-						<a{% if page.url == "/features.html" %} aria-current="page"{% endif %} href="/features.html">Features</a>
+						<a {% if page.url == "/features.html" %} aria-current="page" {% endif %} href="/features.html">Features</a>
 					</li>
 					<li>
-						<a{% if page.url == "/plugins.html" %} aria-current="page"{% endif %} href="/plugins.html">Plugins</a>
+						<a {% if page.url == "/plugins_sdk.html" %} aria-current="page" {% endif %} href="/plugins_sdk.html">Plugins & SDK</a>
 					</li>
 					<li>
 						<a href="https://docs.rodano.ch">Documentation</a>
@@ -38,7 +38,8 @@
 			{{ content | safe }}
 		</main>
 		<footer>
-			Last updated: {{ page.date | isoDate }}. <a href="privacy_policy.html">Privacy Policy</a>
+			Last updated: {{ page.date | isoDate }}.
+			<a href="privacy_policy.html">Privacy Policy</a>
 		</footer>
 	</body>
 </html>
